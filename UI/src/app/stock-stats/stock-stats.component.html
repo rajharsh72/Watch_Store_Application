@@ -1,0 +1,15 @@
+<app-navbar></app-navbar>
+
+<h4 style="text-align:center; margin-top: 10px;">Stock Analysis </h4>
+
+<div class="pie-chart">
+    <canvas baseChart
+            [data]="chartData"
+            [labels]="chartLabels"
+            [type]="'pie'">
+        </canvas>
+
+</div>
+
+
+<app-footer></app-footer>

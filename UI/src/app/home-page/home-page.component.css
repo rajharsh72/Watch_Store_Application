@@ -1,0 +1,96 @@
+.first-row .toolbar-heading{
+    font-size: larger;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.second-row{
+    background-color: aquamarine;
+    height: 10%;
+}
+.login-container{
+    flex: row;
+    display: flex;
+    height:70%;
+}
+
+.image{
+    /* The image used */
+    background-image: url("/assets/home-1.webp");
+    height: 100%;
+    width: 70%;
+
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.forms{
+    padding: 50px;
+    flex-direction: column;
+}
+* {
+    box-sizing: border-box;
+    max-width: 100%;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden;
+  }
+  
+  .container {
+    max-width: 100%;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #2c3e50;
+  }
+
+/* Featured Brands Section */
+.brand-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-bottom: 40px;
+    width: 100%;
+    overflow-x: hidden;
+  }
+  
+  .brand-card {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .brand-card:hover {
+    background-color: #f0f0f0;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .offer-grid,
+    .brand-grid,
+    .category-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .offer-grid,
+    .brand-grid,
+    .category-grid {
+      grid-template-columns: 1fr;
+    }
+  }

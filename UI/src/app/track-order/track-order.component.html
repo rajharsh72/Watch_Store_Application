@@ -1,0 +1,46 @@
+<app-navbar></app-navbar>
+
+<div class="order-tracking-container">
+    <mat-card>
+      <mat-card-title>Track Your Order</mat-card-title>
+      <mat-card-content>
+        <mat-form-field appearance="fill">
+          <mat-label>Enter Order ID</mat-label>
+          <input matInput [(ngModel)]="orderId" placeholder="e.g. ORD12345">
+        </mat-form-field>
+        <button mat-raised-button color="primary" (click)="trackOrder()">Track Order</button>
+      </mat-card-content>
+    </mat-card>
+  
+    <mat-card *ngIf="order" class="order-details">
+      <mat-card-title>Order Details</mat-card-title>
+      <br><br>
+      <mat-card-content>
+        <p><strong>Order ID:</strong> {{ order.orderId }}</p>
+        <p><strong>Order Date:</strong> {{ order.createdAt | date }}</p>
+        <p><strong>Status:</strong> {{ order.orderStatus }}</p>
+        <p><strong>Total Amount:</strong> {{ order.totalPrice | currency:'INR':'symbol':'1.2-2':'en-IN' }}</p>
+  
+        <h3>Items:</h3>
+        <mat-list>
+          <mat-list-item *ngFor="let item of order.orderItems">
+            <img matListAvatar [src]="item.watch.imageUrl" [alt]="item.name">
+            <h4 matLine>{{ item.watch.name }}</h4>
+            <p matLine>Quantity: {{ item.quantity }} - Price: {{ item.price | currency:'INR':'symbol':'1.2-2':'en-IN' }}</p>
+          </mat-list-item>
+        </mat-list>
+  
+        <h3>Shipping Address:</h3>
+        <p>{{ order.address.street }}, {{ order.address.city }}, {{ order.address.state }} {{ order.address.zipCode }}</p>
+      </mat-card-content>
+    </mat-card>
+  
+    <mat-card *ngIf="errMsg" class="error-message">
+      <mat-card-content>
+        {{ errMsg }}
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  
+<app-footer></app-footer>

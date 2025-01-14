@@ -1,0 +1,72 @@
+.first-row  {
+    font-size: larger;
+    
+}
+
+.example-spacer{
+    flex: 1 1 auto;
+}
+
+.second-row{
+    background-color: aquamarine;
+    height: 10%;
+}
+
+.second-row span{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.watch-container{
+    flex: row;
+    display: flex;
+    padding: 60px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.watch-image{
+    margin-left: 10%;
+    width: 30%;
+    height: 70%;
+}
+
+.watch-info{
+    margin-left: 10%;
+    width: 40%;
+}
+
+mat-divider{
+    margin-top: 10px;
+    border-width: 2px;
+    margin-bottom: 10px;
+}
+
+.trust-badges{
+    width: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.trust-badges img{
+    height: 40px;
+}
+
+
+.instock-tag {
+  
+    background-color: #4CAF50;
+    color: white;
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 3px;
+}
+.outofstock-tag {
+    
+    background-color: red;
+    color: white;
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 3px;
+}
+

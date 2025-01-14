@@ -1,0 +1,49 @@
+.first-row  {
+    font-size: larger;
+    background: rosybrown;
+    color: white;
+    
+}
+
+.example-spacer{
+    flex: 1 1 auto;
+}
+
+.second-row {
+    background-color: cornsilk;
+    height: 10%;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 0;
+  }
+  
+  .flash-sale-container {
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .flash-sale-text {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee 20s linear infinite;
+    font-size: medium;
+  }
+  
+  .flash-sale-text span {
+    display: inline-block;
+    padding-right: 50px;
+  }
+  
+  @keyframes marquee {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(-100%, 0);
+    }
+  }
+  
+  /* Pause the animation when hovering over it */
+  .flash-sale-container:hover .flash-sale-text {
+    animation-play-state: paused;
+  }

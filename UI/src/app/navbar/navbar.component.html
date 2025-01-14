@@ -1,0 +1,29 @@
+<mat-toolbar>
+    <mat-toolbar-row class="first-row">
+        <span> Watch Store</span>
+        <span class="example-spacer"></span>
+        <button *ngIf="currentRole === 'USER'" mat-button routerLink="/user-dashboard">Home</button>
+        <button *ngIf="currentRole === 'ADMIN'" mat-button routerLink="/admin-dashboard">Home</button>
+        <button mat-button routerLink="/all-watches">Watches</button>
+        <button mat-button *ngIf="currentRole === 'ADMIN'" (click)="openAddDialog()">Add Watch</button>
+        <button mat-button *ngIf="currentRole === 'ADMIN'" routerLink="/orders">All Orders</button>
+        <button mat-button *ngIf="currentRole === 'ADMIN'" routerLink="/stock-stats">Stats</button>
+        <button mat-button>Smart Watches</button>
+        <button mat-button routerLink="/track-order">Track Order</button>
+        <span style="margin-left: 10%;" *ngIf="currentRole === 'USER' || currentRole === 'ADMIN'">
+            <button *ngIf="currentRole === 'USER'" mat-icon-button routerLink="/view-cart" >
+              <mat-icon>shopping_cart</mat-icon>
+            </button>
+            &nbsp; &nbsp;
+            <button  routerLink='/home' mat-icon-button (click)="logout()"><mat-icon>exit_to_app</mat-icon></button>
+        </span>
+    </mat-toolbar-row>
+    <mat-toolbar-row class="second-row">
+        <div class="flash-sale-container">
+          <div class="flash-sale-text">
+            <span>Flash Sale: 50% off on all Casio watches! Limited time offer. Shop now!</span>
+          </div>
+        </div>
+      </mat-toolbar-row>
+    
+</mat-toolbar>

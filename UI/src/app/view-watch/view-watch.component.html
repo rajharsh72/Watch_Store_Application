@@ -1,0 +1,59 @@
+<app-navbar></app-navbar>
+
+
+
+<div class="watch-container">
+    
+    <img  class="watch-image" [src]="watch.imageUrl" alt="watch.brand">
+    <mat-divider [vertical]="true"></mat-divider>
+
+    <div class="watch-info">
+        <h3 style="color: cornflowerblue;">Brand: {{watch.brand}}</h3>
+        <h2 style="color: dimgrey;">{{watch.name}} | {{watch.type}}</h2>
+
+        <span *ngIf="watch.inStock" class="instock-tag">In Stock</span>
+        <span *ngIf="!watch.inStock" class="outofstock-tag">Out Of Stock</span>
+        
+        <mat-divider [vertical]="false" ></mat-divider>
+        <h2 style="color: crimson;">Price: {{watch.price | currency:'INR':'symbol':'1.2-2':'en-IN'}}/-</h2>
+        <h5 style="margin-bottom: 40px;">EMI Starts at Rs. {{watch.price / 12 | number}}/-</h5>
+
+        <button *ngIf="watch.inStock" class="buy-button" mat-flat-button color="primary" (click)="addToCart(watch.watchId, 1)" >Add to Cart</button>
+        <button *ngIf="!watch.inStock" class="buy-button" mat-flat-button color="primary" >Notify Me</button>
+        <button style="margin-left: 10px;" class="add-to-cart-button" mat-flat-button color="accent">Add to Wishlist</button>
+
+        <mat-divider [vertical]="false" ></mat-divider>
+
+        <div class="trust-badges">
+            <div class="badge">
+              <img src="assets/genuine.png">
+              <span style="color: grey;">100% GENUINE PRODUCTS</span>
+            </div>
+            
+            <div class="badge">
+              <img src="assets/secure_payment.png">
+              <span style="color: grey;">SECURE PAYMENT</span>
+            </div>
+            <div class="badge">
+                <img src="assets/return.png">
+                <span style="color: grey;">10 DAYS RETURN</span>
+              </div>
+        </div>
+
+        <mat-divider [vertical]="false" ></mat-divider>
+
+        <div class="watch-description">
+            <h2>Product Description</h2>
+
+            <p> BRAND: {{watch.brand}} </p>
+            <p>MODEL: {{watch.name}}</p>
+            <p>DESCRIPTION: {{watch.description}}</p>
+            <p>DIAL TYPE: {{watch.type}}</p>
+            <p>AVAILABLE SINCE: {{watch.createdAt}}</p>
+            
+        </div>
+    </div> 
+</div>
+
+
+<app-footer></app-footer>

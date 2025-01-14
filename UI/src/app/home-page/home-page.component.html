@@ -1,0 +1,50 @@
+<app-navbar></app-navbar>
+<div class="login-container">
+    <div class="image">
+    </div>
+
+    <div class="forms">
+        
+        <div>
+            <button type="button" class="btn btn-outline-dark" (click)="toggleView()" [class.active] = 'isLoginView'>Login</button>
+            &nbsp;
+            <button type="button" class="btn btn-outline-dark" (click)="opneRegisterationForm()" [class.active] = '!isLoginView'>Register</button>
+        </div>
+        <br> <br>
+<!-- 
+        <h2 style="margin-top: 10px; margin-left: 5px;">{{isLoginView ? 'Login Here': 'Register Here'}}</h2> -->
+        <app-login *ngIf="isLoginView"></app-login>
+        <app-register-user *ngIf="!isLoginView"></app-register-user>
+    </div>
+</div>
+
+<div class="container">
+
+
+    <section class="featured-brands">
+    <h2>Featured Brands</h2>
+    <div class="brand-grid">
+      <div class="brand-card"><img src="https://dev1-cdn.helioswatchstore.com/Casio_2__1.jpg" alt="Casio"></div>
+      <div class="brand-card"><img src="https://dev1-cdn.helioswatchstore.com/Fitbit_1_1.jpg" alt="Casio"></div>
+      <div class="brand-card"><img src="https://dev1-cdn.helioswatchstore.com/25FOSSIL.jpg" alt="Casio"></div>
+      <div class="brand-card"><img src="https://dev1-cdn.helioswatchstore.com/Police_1_1.jpg" alt="Casio"></div>
+      <div class="brand-card"><img src="https://dev1-cdn.helioswatchstore.com/Titan_1_1.jpg" alt="Casio"></div>
+      <div class="brand-card"><img src="https://dev1-cdn.helioswatchstore.com/Michael_kors_1_1.jpg" alt="Casio"></div>
+      <div class="brand-card"><img src="https://dev1-cdn.helioswatchstore.com/Seiko_1_1.jpg" alt="Casio"></div>
+      <div class="brand-card"><img src="https://dev1-cdn.helioswatchstore.com/Amazefit_1_1.jpg" alt="Casio"></div>
+      <div class="brand-card"><img src="https://dev1-cdn.helioswatchstore.com/G-Shock_1_1.jpg" alt="Casio"></div>
+      <div class="brand-card"><img src="https://dev1-cdn.helioswatchstore.com/Coach_1__1_.jpg" alt="Casio"></div>
+      <div class="brand-card"><img src="https://dev1-cdn.helioswatchstore.com/Diesel_2__1.jpg" alt="Casio"></div>
+      <div class="brand-card"><img src="https://dev1-cdn.helioswatchstore.com/1Balmain.png" alt="Casio"></div>
+      <div class="brand-card"><img src="https://dev1-cdn.helioswatchstore.com/Tommy_Hilfiger_1_1.jpg" alt="Casio"></div>
+      <div class="brand-card"><img src="https://dev1-cdn.helioswatchstore.com/Obaku_1_1.jpg" alt="Casio"></div>
+      <div class="brand-card"><img src="https://dev1-cdn.helioswatchstore.com/Emporio_Armani_1_1.jpg" alt="Casio"></div>
+      <div class="brand-card"><img src="https://dev1-cdn.helioswatchstore.com/Milus_Brand_Logo-01.jpg" alt="Casio"></div>
+      <div class="brand-card"><img src="https://dev1-cdn.helioswatchstore.com/Swaroski_2_1_1.jpg" alt="Casio"></div>
+      <div class="brand-card"><img src="https://dev1-cdn.helioswatchstore.com/Armani_Exchange_1_1.jpg" alt="Casio"></div>
+
+    </div>
+  </section>
+</div>
+
+<app-footer></app-footer>

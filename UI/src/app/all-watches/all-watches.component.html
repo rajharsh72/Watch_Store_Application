@@ -1,0 +1,85 @@
+
+<app-navbar></app-navbar>
+
+<div class="watch-list-container">
+    <div class="filters">
+        <h2>Filter By</h2>
+        <form [formGroup]="filterForm">
+          <mat-form-field>
+            <mat-label>Brand</mat-label>
+            <mat-select formControlName="brand">
+              <mat-option value="">All Brands</mat-option>
+              <mat-option *ngFor="let brand of brands" [value]="brand">{{brand}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+    
+          <mat-form-field>
+            <mat-label>Price Range</mat-label>
+            <mat-select formControlName="priceRange">
+              <mat-option value="">All Prices</mat-option>
+              <mat-option value="0-10000">₹0 - ₹10,000</mat-option>
+              <mat-option value="10000-50000">₹10,000 - ₹50,000</mat-option>
+              <mat-option value="50000-100000">₹50,000 - ₹100,000</mat-option>
+              <mat-option value="100000-999999">₹100,000+</mat-option>
+            </mat-select>
+          </mat-form-field>
+    
+          <mat-form-field>
+            <mat-label>Type</mat-label>
+            <mat-select formControlName="type">
+              <mat-option value="">All Types</mat-option>
+              <mat-option *ngFor="let type of types" [value]="type">{{type}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </form>
+
+        <br><br>
+        <h2>Sort by</h2>
+        <form [formGroup]="sortForm">
+            <mat-form-field>
+                <mat-label>Sort by</mat-label>
+                <mat-select formControlName="sort">
+                  <mat-option value="">Select</mat-option>
+                  <mat-option *ngFor="let option of sortOptions" [value]="option.value">{{option.viewValue}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </form>
+
+    </div>
+
+    <div *ngIf="filteredWatches.length === 0" class="not-found">
+        No watches found.......
+      </div>
+
+    <div *ngIf="filteredWatches.length > 0" class="row">
+        <mat-card *ngFor="let watch of filteredWatches" class="watch-card">
+            <img mat-card-image [src]="watch.imageUrl" alt="watch.brand">
+            <mat-card-content class="content">
+                <h2>{{watch.brand}}</h2>
+                <p>{{watch.name.substring(0,20)}}...</p>
+                <p class="price">{{watch.price | currency:'INR':'symbol':'1.2-2':'en-IN'}}</p>
+
+                <button mat-fab extended color="primary"
+                *ngIf="watch!=null && currentRole === 'USER'" routerLink="/watch/{{watch.watchId}}"
+                type="button" style="bottom: 0px;">View More</button>
+
+                <button mat-button  color="primary"
+                *ngIf="watch!=null && currentRole === 'ADMIN'" (click)="openUpdateDialog(watch)"
+                type="button" style="bottom: 0px;">UPDATE</button>
+
+                <button mat-button color="warn"
+                *ngIf="watch!=null && currentRole === 'ADMIN'" (click)="markOutOfStock(watch.watchId)"
+                type="button" style="bottom: 0px;">MARK OUT OF STOCK</button>
+                
+                <span *ngIf="watch.inStock" class="instock-tag">In Stock</span>
+                <span *ngIf="!watch.inStock" class="outofstock-tag">Out Of Stock</span>
+            </mat-card-content>
+
+        </mat-card>
+    </div>
+    
+</div>
+
+
+
+<app-footer></app-footer>

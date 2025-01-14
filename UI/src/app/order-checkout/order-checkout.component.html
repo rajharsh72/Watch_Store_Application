@@ -1,0 +1,59 @@
+<app-navbar></app-navbar>
+
+<div class="checkout-container" *ngIf="!orderPlaced">
+  
+    <!-- Cart Items Summary -->
+    <mat-card class="section">
+      <mat-card-title>Order Summary</mat-card-title>
+      <br>
+      <mat-card-content>
+        <div *ngFor="let item of cartItems" class="order-item">
+          <span>{{ item.watch.name }} (x{{ item.quantity }})</span>
+          <span>{{ item.watch.price * item.quantity | currency:'INR':'symbol':'1.2-2':'en-IN' }}</span>
+        </div>
+        <mat-divider></mat-divider>
+        <div class="total">
+          <strong>Total:</strong>
+          <strong>{{ totalPrice | currency:'INR':'symbol':'1.2-2':'en-IN' }}</strong>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  
+    <!-- Delivery Address -->
+    <mat-card class="section">
+      <mat-card-title>Delivery Address</mat-card-title>
+      <mat-card-content>
+        <mat-radio-group [(ngModel)]="selectedAddress">
+          <mat-radio-button [value]="selectedAddress" checked>
+            {{ selectedAddress.street }}, {{ selectedAddress.city }}, {{ selectedAddress.state }} {{ selectedAddress.zipCode }}
+          </mat-radio-button>
+          <!-- Add more addresses if needed -->
+        </mat-radio-group>
+        <button mat-button color="primary" >Add New Address</button>
+      </mat-card-content>
+    </mat-card>
+  
+    <!-- Payment Mode -->
+    <mat-card class="section">
+      <mat-card-title>Payment Mode</mat-card-title>
+      <mat-card-content>
+        <mat-radio-group [(ngModel)]="paymentMode">
+          <mat-radio-button value="cod" checked>Cash on Delivery</mat-radio-button>
+        </mat-radio-group>
+      </mat-card-content>
+    </mat-card>
+  
+    <!-- Place Order Button -->
+    <button mat-raised-button color="primary" (click)="placeOrder()" class="place-order-btn">Place Order</button>
+  </div>
+
+
+  <div class="order-confirmation" *ngIf="orderPlaced">
+    <h1>Order Confirmation</h1>
+    <p>Thank you for your order!</p>
+    <p>Your order ID is: <strong>{{ orderId }}</strong></p>
+    <p>You can use this ID to track your order status.</p>
+    <!-- Add more order details here -->
+  </div>
+  
+<app-footer></app-footer>

@@ -1,0 +1,72 @@
+<div mat-dialog-title>
+    ADD DETAILS:
+</div>
+
+<form [formGroup]="updateForm" (ngSubmit)="updateWatch()" >
+    <div mat-dialog-content>
+        <div>
+            <mat-form-field appearance="outline">
+                <mat-label>BRAND:</mat-label>
+                <input type="text" matInput
+                placeholder="Brand Name"
+                formControlName="brand">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>MODEL:</mat-label>
+                <input type="text" matInput
+                placeholder="Model Name"
+                formControlName="name">
+            </mat-form-field>
+        </div>
+
+        <div>
+            <mat-form-field appearance="outline">
+                <mat-label>TYPE:</mat-label>
+                <input type="text" matInput
+                placeholder="DIAL TYPE"
+                formControlName="type">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>PRICE:</mat-label>
+                <input type="number" matInput
+                placeholder="Pirice"
+                formControlName="price">
+            </mat-form-field>
+        </div>
+
+        <div>
+            <mat-form-field appearance="outline">
+                <mat-label>QUANTITY:</mat-label>
+                <input type="number" matInput
+                placeholder="Quantity"
+                formControlName="quantity">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>IMAGE LINK:</mat-label>
+                <input type="url" matInput
+                placeholder="Image Link"
+                formControlName="imageUrl">
+            </mat-form-field>
+        </div>
+
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>DESCRIPTION:</mat-label>
+                <textarea type="text" matInput
+                placeholder="DESCRIPTION"
+                formControlName="description"></textarea>
+            </mat-form-field>
+
+        </div>
+
+    </div>
+
+    <div mat-dialog-actions class="submitBtn">
+        <button mat-raised-button color="primary" type="submit">UPDATE</button>
+        <button mat-raised-button color="warn" type="reset">CANCEL</button>
+        
+    </div>
+</form>

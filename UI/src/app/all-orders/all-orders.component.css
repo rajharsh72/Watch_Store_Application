@@ -1,0 +1,15 @@
+.admin-orders-container {
+    padding: 20px;
+  }
+  
+  table {
+    width: 100%;
+  }
+  
+  .mat-column-update-order-status {
+    width: 80px;
+  }
+  
+  .mat-column-status {
+    width: 150px;
+  }

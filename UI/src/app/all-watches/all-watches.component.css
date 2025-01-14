@@ -1,0 +1,80 @@
+.first-row  {
+    font-size: larger;
+    
+}
+
+.example-spacer{
+    flex: 1 1 auto;
+}
+
+.second-row{
+    background-color: aquamarine;
+    height: 10%;
+}
+
+.second-row span{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.watch-list-container{
+    display: flex;
+   padding: 20px;
+}
+
+.filters{
+    width: 250px;
+    padding-right: 40px;
+    margin-top: 30px;
+}
+mat-form-field{
+    margin-top: 30px;
+}
+.watch-card{
+    margin-top: 20px ;
+    margin-left: 20px;
+    padding: 20px;
+    /* height: auto; */
+    width: 250px;
+}
+
+.content{
+    margin-top: 30px;
+    text-align: center;
+}
+
+.price{
+    font-weight: bold;
+}
+
+.instock-tag {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 3px;
+}
+.outofstock-tag {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: red;
+    color: white;
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 3px;
+  }
+
+  .not-found {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 18px;
+    color: #666;
+  }
